@@ -58,7 +58,8 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
   
-  def self.find_by(options={})
+  def self.find_by(key: value)
+    binding.pry
     options.each do |k, v|
       key = k.to_s
       value = v
