@@ -60,10 +60,8 @@ class InteractiveRecord
   
   def self.find_by(options={})
     binding.pry
-    key = nil
-    value = nil 
     options.each do |k, v|
-      key = k
+      key = k.to_s
       value = v
     end
     sql = "SELECT*FROM #{self.table_name} WHERE ? = ?"
