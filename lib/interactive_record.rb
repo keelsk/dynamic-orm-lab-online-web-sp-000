@@ -63,10 +63,10 @@ class InteractiveRecord
     key = nil
     value = nil
     options.each do |k, v|
-      key = k.to_s
+      key = k
       value = v
     end
-    sql = "SELECT*FROM #{self.table_name} WHERE ? = ?"
+    sql = "SELECT*FROM #{self.table_name} WHERE #{key} = ?"
     DB[:conn].execute(sql, key, value)
   end
 end
