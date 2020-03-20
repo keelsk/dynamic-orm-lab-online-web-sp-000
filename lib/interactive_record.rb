@@ -59,6 +59,7 @@ class InteractiveRecord
   end
   
   def self.find_by(options={})
+    binding.pry
     key = nil
     value = nil 
     options.each do |k, v|
